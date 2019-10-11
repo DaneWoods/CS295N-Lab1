@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SkeletonSite.Models.Story>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Story Board</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a asp-action="Index">Home</a></li>
+                <li><a asp-action="History">History</a></li>
+                <li><a asp-action="Stories">Stories</a></li>
+                <li><a asp-action="Sources">Sources</a></li>
+                <li><a asp-action="Books">Books</a></li>
+                <li><a asp-action="Links">Links</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h2 class="text-center">This is all of the current stories that have been posted</h2>
+    <div class="panel-body">
+        <table class="table table-md text-md-left table-bordered">
+            <thead>
+                <tr>
+                    <th>Posted Stories</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SkeletonSite.Models.Story s in Model)
+                {
+                    <tr>
+                        <td>@s.Text</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
