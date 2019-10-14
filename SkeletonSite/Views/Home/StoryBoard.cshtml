@@ -36,7 +36,9 @@
                 @foreach (SkeletonSite.Models.Story s in Model)
                 {
                     <tr>
-                        <td>@s.Text</td>
+                        <td>By: @s.Name
+                        <br />
+                        @s.Text</td>
                     </tr>
                 }
             </tbody>
