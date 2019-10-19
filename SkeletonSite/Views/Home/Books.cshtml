@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<SkeletonSite.Models.BookDetails>
+@{
     Layout = null;
 }
 
@@ -22,6 +23,26 @@
             </ul>
         </div>
     </nav>
-    <h2 class="text-center">Books and print media coming soon</h2>
+    <h2 class="text-center">Books and print media within the table</h2>
+    <div class="panel-body">
+        <table class="table table-md text-md-left table-bordered">
+            <thead>
+                <tr>
+                    <th>Books from the person of interest</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SkeletonSite.Models.BookDetails b in Model)
+                {
+                    <tr>
+                        <td>
+                            Author: @b.Author<br />
+                            Title: @b.Title
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

@@ -39,7 +39,7 @@ namespace SkeletonSite.Controllers
                 return View();
             }
         }
-
+        
         public ViewResult Sources()
         {
             return View();
@@ -47,12 +47,12 @@ namespace SkeletonSite.Controllers
 
         public ViewResult Books()
         {
-            return View();
+            return View(BookCollection.library);
         }
 
         public ViewResult Links()
         {
-            return View();
+            return View(LinkCollection.Bank);
         }
 
         public ViewResult StoryBoard()

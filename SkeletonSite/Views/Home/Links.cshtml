@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<SkeletonSite.Models.Link>
+@{
     Layout = null;
 }
 
@@ -22,6 +23,25 @@
             </ul>
         </div>
     </nav>
-    <h2 class="text-center">Links to online media coming soon</h2>
+    <h2 class="text-center">Links to online media Below</h2>
+    <div class="panel-body">
+        <table class="table table-md text-md-left table-bordered">
+            <thead>
+                <tr>
+                    <th>Links to wikipedia giving info about the person</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SkeletonSite.Models.Link l in Model)
+                {
+                    <tr>
+                        <td>
+                            URL: <a href="@l.Url">@l.Url</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
