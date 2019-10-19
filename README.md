@@ -1,1 +1,1 @@
-# CS295N-Lab1
+# CS295N-Lab2
