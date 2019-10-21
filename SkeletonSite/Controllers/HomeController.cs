@@ -31,7 +31,7 @@ namespace SkeletonSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                Board.AddStory(post);
+                Models.Stories.AddStory(post);
                 return View();
             }
             else
@@ -57,7 +57,19 @@ namespace SkeletonSite.Controllers
 
         public ViewResult StoryBoard()
         {
-            return View(Board.Bank);
+            return base.View(Models.Stories.StoryBank);
+        }
+        [HttpGet]
+        public ViewResult Comment()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ViewResult Comment(string subject)
+        {
+            int i;
+            SkeletonSite.Models.Stories.stories[0].Subjects.Add(subject);
+            return View();
         }
     }
 }

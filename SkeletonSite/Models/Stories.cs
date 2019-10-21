@@ -5,22 +5,27 @@ using System.Threading.Tasks;
 
 namespace SkeletonSite.Models
 {
-    public class Board
+    public class Stories
     {
         public static List<Story> stories = new List<Story>();
 
-        public static IEnumerable<Story> Bank
+        public static IEnumerable<Story> StoryBank
         {
             get
             {
-                stories.Sort((title1, title2) => title1.Title.CompareTo(title2.Title));
+                for(int i = 0; i < stories.Count; i++)
+                {
+                    if(stories[i].Title != null)
+                        stories.Sort((title1, title2) => title1.Title.CompareTo(title2.Title));
+                }
+                
                 return stories;
             }
         }
 
         public static void AddStory(Story story)
         {
-                stories.Add(story);
+            stories.Add(story); 
         }
     }
 }

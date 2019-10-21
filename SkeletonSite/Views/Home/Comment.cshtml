@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Story Board</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a asp-action="Index">Home</a></li>
+                <li><a asp-action="History">History</a></li>
+                <li><a asp-action="Stories">Stories</a></li>
+                <li><a asp-action="Sources">Sources</a></li>
+                <li><a asp-action="Books">Books</a></li>
+                <li><a asp-action="Links">Links</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
+    <div class="panel-body">
+        <form class="p-4" asp-action="Comment" method="post">
+            <div asp-validation-summary="All">
+                <div class="form-group">
+                    <label>Subject:</label>
+                    <input class="form-control" name="subject" />
+                    <div class="text-md-left">
+                        <button class="btn btn-primary" type="submit">Submit comment</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

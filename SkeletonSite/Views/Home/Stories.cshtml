@@ -42,19 +42,6 @@
                 </div>
             </form>
         </div>
-        <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
-        <div class="panel-body">
-            <form class="p-4" asp-action="Stories" method="post">
-                <div asp-validation-summary="All">
-                    <div class="form-group">
-                        <label asp-for="Subject">Subject:</label>
-                        <input class="form-control" asp-for="Subject" />
-                        <div class="text-md-left">
-                            <button class="btn btn-primary" type="submit">Submit comment</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
             <div class="text-center">
                 If you want to see others stories, click <a class="nav-link" asp-action="StoryBoard">here</a>
                 to go to that page.

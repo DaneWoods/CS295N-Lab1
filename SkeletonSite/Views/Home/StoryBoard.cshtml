@@ -40,18 +40,22 @@
                             <br />
                             @s.Text
                         </td>
-                    </tr>
-                    @foreach (SkeletonSite.Models.Story c in Model)
+                    </tr>              
+
+                    @foreach (string com in s.Subjects)
                     {
                         <tr>
                             <td>
-                                Subject: @c.Subject
+                                Subject: @com
                             </td>
                         </tr>
                     }
                  }
             </tbody>
         </table>
+    </div>
+    <div class="text-center">
+        If you want to submit a comment to a story click <a class="nav-link" asp-action="Comment">Here</a>.
     </div>
 </body>
 </html>
