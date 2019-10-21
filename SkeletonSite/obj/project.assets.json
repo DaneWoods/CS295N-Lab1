@@ -12083,11 +12083,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\SkeletonSite\\SkeletonSite\\SkeletonSite.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\CS295N\\SkeletonSite\\SkeletonSite\\SkeletonSite.csproj",
       "projectName": "SkeletonSite",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\SkeletonSite\\SkeletonSite\\SkeletonSite.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\CS295N\\SkeletonSite\\SkeletonSite\\SkeletonSite.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\SkeletonSite\\SkeletonSite\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\CS295N\\SkeletonSite\\SkeletonSite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

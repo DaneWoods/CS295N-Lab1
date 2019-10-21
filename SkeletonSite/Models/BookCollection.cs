@@ -11,17 +11,20 @@ namespace SkeletonSite.Models
         private static BookDetails b1 = new BookDetails();
         private static BookDetails b2 = new BookDetails();
 
-        public static IEnumerable<BookDetails> library
+        public static IEnumerable<BookDetails> Library
         {
             get
             {
                 if (IsEmpty())
+                {
                     Initialize();
+                    books.Sort((title1, title2) => title1.Title.CompareTo(title2.Title));
+                }
                 return books;
             }
         }
 
-       public static void Initialize()
+       private static void Initialize()
        {
             b1.Title = "A Brief History of Time";
             b1.Author = "Stephen Hawking";
@@ -31,7 +34,7 @@ namespace SkeletonSite.Models
             books.Add(b2);
        }
 
-       public static bool IsEmpty()
+       private static bool IsEmpty()
        {
            bool empty;
            if (books.Count == 0)

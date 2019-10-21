@@ -13,13 +13,14 @@ namespace SkeletonSite.Models
         {
             get
             {
+                stories.Sort((title1, title2) => title1.Title.CompareTo(title2.Title));
                 return stories;
             }
         }
 
         public static void AddStory(Story story)
         {
-            stories.Add(story);
+                stories.Add(story);
         }
     }
 }

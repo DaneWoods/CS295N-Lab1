@@ -47,7 +47,7 @@ namespace SkeletonSite.Controllers
 
         public ViewResult Books()
         {
-            return View(BookCollection.library);
+            return View(BookCollection.Library);
         }
 
         public ViewResult Links()

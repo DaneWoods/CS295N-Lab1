@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<SkeletonSite.Models.Story>
-
 @{
     Layout = null;
 }
@@ -36,11 +35,21 @@
                 @foreach (SkeletonSite.Models.Story s in Model)
                 {
                     <tr>
-                        <td>By: @s.Name
-                        <br />
-                        @s.Text</td>
+                        <td>
+                            Title: @s.Title
+                            <br />
+                            @s.Text
+                        </td>
                     </tr>
-                }
+                    @foreach (SkeletonSite.Models.Story c in Model)
+                    {
+                        <tr>
+                            <td>
+                                Subject: @c.Subject
+                            </td>
+                        </tr>
+                    }
+                 }
             </tbody>
         </table>
     </div>
