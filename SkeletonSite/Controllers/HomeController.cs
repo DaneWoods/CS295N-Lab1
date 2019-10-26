@@ -57,23 +57,22 @@ namespace SkeletonSite.Controllers
 
         public ViewResult StoryBoard()
         {
-            return base.View(Models.Stories.StoryBank);
+            return View(Models.Stories.StoryBank);
         }
 
         [HttpGet]
-        public ViewResult Comment()
+        public ViewResult Comment(string storyTitle)
         {
-            return View(Models.Stories.StoryBank);
+            return View("Comment", storyTitle);
         }
 
         [HttpPost]
         public ViewResult Comment(string subject, string storyTitle)
         {
-            Story s1 = Stories.retrieve(storyTitle);
             Comment com = new Comment();
             com.Text = subject;
-            s1.Subjects.Add(com);
-            return View(Models.Stories.StoryBank);
+            Stories.Retrieve(storyTitle).Subjects.Add(com);
+            return View("Comment", storyTitle);
         }
     }
 }

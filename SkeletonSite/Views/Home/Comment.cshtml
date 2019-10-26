@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SkeletonSite.Models.Story>
+﻿@model String
 @{
     Layout = null;
 }
@@ -25,13 +25,13 @@
     </nav>
     <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
     <div class="panel-body">
-        <form class="p-4" asp-action="Comment" method="post">
+        <form class="p-4" method="post">
             <div>
                 <div class="form-group">
                     <label>Subject:</label>
                     <input class="form-control" name="subject"/>
                     <div class="text-md-left">
-                        <button class="btn btn-primary" type="submit" >Submit comment</button>
+                        <button class="btn btn-primary" type="submit">Submit comment</button>
                     </div>
                 </div>
             </div>

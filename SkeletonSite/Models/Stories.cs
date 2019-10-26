@@ -28,15 +28,9 @@ namespace SkeletonSite.Models
             stories.Add(story); 
         }
 
-        public static Story retrieve(string title)
+        public static Story Retrieve(string title)
         {
-            Story post = new Story();
-            for (int i = 0; i < stories.Count; i++)
-            {
-                if (stories[i].Title == title)
-                    post = stories[i];
-            }
-            return post;
+            return stories.Find(x => x.Title == title);
         }
     }
 }
