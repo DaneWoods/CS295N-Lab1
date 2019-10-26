@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<SkeletonSite.Models.Story>
+@{
     Layout = null;
 }
 
@@ -15,7 +16,7 @@
             <ul class="nav navbar-nav">
                 <li><a asp-action="Index">Home</a></li>
                 <li><a asp-action="History">History</a></li>
-                <li><a asp-action="Stories">Stories</a></li>
+                <li><a asp-action="StoryPost">Stories</a></li>
                 <li><a asp-action="Sources">Sources</a></li>
                 <li><a asp-action="Books">Books</a></li>
                 <li><a asp-action="Links">Links</a></li>
@@ -25,16 +26,20 @@
     <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
     <div class="panel-body">
         <form class="p-4" asp-action="Comment" method="post">
-            <div asp-validation-summary="All">
+            <div>
                 <div class="form-group">
                     <label>Subject:</label>
-                    <input class="form-control" name="subject" />
+                    <input class="form-control" name="subject"/>
                     <div class="text-md-left">
-                        <button class="btn btn-primary" type="submit">Submit comment</button>
+                        <button class="btn btn-primary" type="submit" >Submit comment</button>
                     </div>
                 </div>
             </div>
         </form>
+        <div class="text-center">
+            To see your comment click <a class="nav-link" asp-action="StoryBoard">here</a>
+            to go back to the story board page.
+        </div>
     </div>
 </body>
 </html>
