@@ -8,7 +8,7 @@ namespace SkeletonSite.Models
 {
     public class Story
     {
-        public static List<Comment> com = new List<Comment>();
+        public List<Comment> com = new List<Comment>();
         [Required(ErrorMessage = "Please input a title for your story")]
         public string Title { get; set; }
         [Required(ErrorMessage = "Please input some text for your story")]
