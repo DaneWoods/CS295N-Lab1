@@ -72,6 +72,10 @@ namespace SkeletonSite.Controllers
             Comment com = new Comment();
             com.Text = subject;
             Stories.Retrieve(storyTitle).Subjects.Add(com);
+            Console.WriteLine(Stories.Retrieve(storyTitle).Title);
+            Console.WriteLine(Stories.Retrieve(storyTitle).Text);
+            Console.WriteLine(Stories.Retrieve(storyTitle).Subjects.Count);
+            Console.WriteLine(Stories.Retrieve("The Journey").Subjects.Count);
             return View("Comment", storyTitle);
         }
     }
