@@ -252,3 +252,4 @@ C:\Users\Administrator\Desktop\CS295N\Lab4 Dane Woods\SkeletonSite\obj\Debug\net
 C:\Users\Administrator\Desktop\CS295N\Lab4 Dane Woods\SkeletonSite\obj\Debug\netcoreapp2.2\SkeletonSite.pdb
 C:\Users\Administrator\Desktop\CS295N\Lab4 Dane Woods\SkeletonSite\obj\Debug\netcoreapp2.2\SkeletonSite.csproj.CopyComplete
 C:\Users\Administrator\Desktop\CS295N\Lab4 Dane Woods\SkeletonSite\obj\Debug\netcoreapp2.2\Razor\Views\Home\StoryPost.g.cshtml.cs
+C:\Users\Administrator\Desktop\CS295N\Lab4 Dane Woods\SkeletonSite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TableLayout.g.cshtml.cs

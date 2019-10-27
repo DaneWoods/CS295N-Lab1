@@ -1,46 +1,27 @@
-﻿@model String
-@{
-    Layout = null;
+﻿@{
+    Layout = "_Layout";
 }
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <title>Story Board</title>
-</head>
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li><a asp-action="Index">Home</a></li>
-                <li><a asp-action="History">History</a></li>
-                <li><a asp-action="StoryPost">Stories</a></li>
-                <li><a asp-action="Sources">Sources</a></li>
-                <li><a asp-action="Books">Books</a></li>
-                <li><a asp-action="Links">Links</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
-    <div class="panel-body">
-        <form class="p-4" method="post" asp->
-            <div>
-                <div class="form-group">
-                    <label>Subject:</label>
-                    <input class="form-control" name="subject"/>
-                    <div class="text-md-left">
-                        <button class="btn btn-primary" type="submit">Submit comment</button>
+    <div class="panel panel-success">
+        <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
+        <div class="panel-body">
+            <div><h2>You are writing a comment for: @ViewBag.Story</h2></div>
+            <form class="p-4" method="post" asp-action="Comment">
+                <div>
+                    <div class="form-group">
+                        <label>Subject:</label>
+                        <input class="form-control" name="subject" />
+                        <div class="text-md-left">
+                            <button class="btn btn-primary" type="submit">Submit comment</button>
+                        </div>
                     </div>
                 </div>
+            </form>
+            <div class="text-center">
+                To see your comment click <a class="nav-link" asp-action="StoryBoard">here</a>
+                to go back to the story board page.
             </div>
-        </form>
-        <div class="text-center">
-            To see your comment click <a class="nav-link" asp-action="StoryBoard">here</a>
-            to go back to the story board page.
         </div>
     </div>
 </body>
-</html>
 

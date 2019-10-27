@@ -1,47 +1,14 @@
 ﻿@model IEnumerable<SkeletonSite.Models.Link>
 @{
-    Layout = null;
+    Layout = "_TableLayout";
 }
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <title>Links page</title>
-</head>
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li><a asp-action="Index">Home</a></li>
-                <li><a asp-action="History">History</a></li>
-                <li><a asp-action="StoryPost">Stories</a></li>
-                <li><a asp-action="Sources">Sources</a></li>
-                <li><a asp-action="Books">Books</a></li>
-                <li class="active"><a asp-action="Links">Links</a></li>
-            </ul>
-        </div>
-    </nav>
-    <h2 class="text-center">Links to online media Below</h2>
-    <div class="panel-body">
-        <table class="table table-md text-md-left table-bordered">
-            <thead>
-                <tr>
-                    <th>Links to wikipedia giving info about the person</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (SkeletonSite.Models.Link l in Model)
-                {
-                    <tr>
-                        <td>
-                            URL: <a href="@l.Url">@l.Url</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+    @foreach (SkeletonSite.Models.Link l in Model)
+    {
+        <tr>
+            <td>
+                URL: <a href="@l.Url">@(ViewBag.Info = l.Url)</a>
+            </td>
+        </tr>
+    }
 </body>
-</html>
