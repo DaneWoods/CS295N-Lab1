@@ -16,7 +16,7 @@
             <ul class="nav navbar-nav">
                 <li><a asp-action="Index">Home</a></li>
                 <li><a asp-action="History">History</a></li>
-                <li><a asp-action="Stories">Stories</a></li>
+                <li><a asp-action="StoryPost">Story Post</a></li>
                 <li><a asp-action="Sources">Sources</a></li>
                 <li><a asp-action="Books">Books</a></li>
                 <li><a asp-action="Links">Links</a></li>
@@ -40,22 +40,23 @@
                             <br />
                             @s.Text
                         </td>
-                    </tr>              
-
-                    @foreach (string com in s.Subjects)
+                    </tr>
+                    @foreach (Comment com in s.Subjects)
                     {
                         <tr>
                             <td>
-                                Subject: @com
+                                Subject: @com.Text
                             </td>
                         </tr>
                     }
-                 }
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary" asp-action="Comment" asp-route-storyTitle="@s.Title">Comment</a>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
-    </div>
-    <div class="text-center">
-        If you want to submit a comment to a story click <a class="nav-link" asp-action="Comment">Here</a>.
     </div>
 </body>
 </html>

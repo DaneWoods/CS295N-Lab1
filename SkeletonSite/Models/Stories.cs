@@ -27,5 +27,10 @@ namespace SkeletonSite.Models
         {
             stories.Add(story); 
         }
+
+        public static Story Retrieve(string title)
+        {
+            return stories.Find(x => x.Title == title);
+        }
     }
 }

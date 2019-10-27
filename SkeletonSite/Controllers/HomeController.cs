@@ -21,13 +21,13 @@ namespace SkeletonSite.Controllers
         }
 
         [HttpGet]
-        public ViewResult Stories()
+        public ViewResult StoryPost()
         {
             return View();
         }
 
         [HttpPost]
-        public ViewResult Stories(Story post)
+        public ViewResult StoryPost(Story post)
         {
             if (ModelState.IsValid)
             {
@@ -59,17 +59,20 @@ namespace SkeletonSite.Controllers
         {
             return base.View(Models.Stories.StoryBank);
         }
+
         [HttpGet]
-        public ViewResult Comment()
+        public ViewResult Comment(string storyTitle)
         {
-            return View();
+            return View("Comment", storyTitle);
         }
+
         [HttpPost]
-        public ViewResult Comment(string subject)
+        public ViewResult Comment(string subject, string storyTitle)
         {
-            int i;
-            SkeletonSite.Models.Stories.stories[0].Subjects.Add(subject);
-            return View();
+            Comment com = new Comment();
+            com.Text = subject;
+            Stories.Retrieve(storyTitle).Subjects.Add(com);
+            return View("Comment", storyTitle);
         }
     }
 }
