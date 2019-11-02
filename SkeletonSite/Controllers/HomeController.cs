@@ -52,17 +52,11 @@ namespace SkeletonSite.Controllers
 
         public ViewResult Books()
         {
-            ViewData["Title"] = "Books";
-            ViewData["Heading"] = "Books and print media within the table";
-            ViewData["THeader"] = "Books from: ";
             return View(BookCollection.Library);
         }
 
         public ViewResult Links()
         {
-            ViewData["Title"] = "Links";
-            ViewData["Heading"] = "Links to online media Below";
-            ViewData["THeader"] = "Links to wikipedia giving info about: ";
             return View(LinkCollection.Bank);
         }
 
@@ -83,6 +77,7 @@ namespace SkeletonSite.Controllers
         [HttpPost]
         public ViewResult Comment(string subject, string storyTitle)
         {
+            ViewBag.Story = storyTitle;
             ViewData["Title"] = "Comment";
             Comment com = new Comment();
             com.Text = subject;

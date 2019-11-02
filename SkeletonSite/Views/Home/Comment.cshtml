@@ -1,27 +1,26 @@
-﻿@{
+﻿@model String
+@{
     Layout = "_Layout";
 }
-<body>
-    <div class="panel panel-success">
-        <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
-        <div class="panel-body">
-            <div><h2>You are writing a comment for: @ViewBag.Story</h2></div>
-            <form class="p-4" method="post" asp-action="Comment">
-                <div>
-                    <div class="form-group">
-                        <label>Subject:</label>
-                        <input class="form-control" name="subject" />
-                        <div class="text-md-left">
-                            <button class="btn btn-primary" type="submit">Submit comment</button>
-                        </div>
+<div class="panel panel-success">
+    <div class="panel-heading"><h4>Below here you can type a comment to a story</h4></div>
+    <div class="panel-body">
+        <div><h2>You are writing a comment for: @ViewBag.Story</h2></div>
+        <form class="p-4" method="post">
+            <div>
+                <div class="form-group">
+                    <label>Subject:</label>
+                    <input class="form-control" name="subject" />
+                    <div class="text-md-left">
+                        <button class="btn btn-primary" type="submit">Submit comment</button>
                     </div>
                 </div>
-            </form>
-            <div class="text-center">
-                To see your comment click <a class="nav-link" asp-action="StoryBoard">here</a>
-                to go back to the story board page.
             </div>
+        </form>
+        <div class="text-center">
+            To see your comment click <a class="nav-link" asp-action="StoryBoard">here</a>
+            to go back to the story board page.
         </div>
     </div>
-</body>
+</div>
 
