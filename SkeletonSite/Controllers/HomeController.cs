@@ -50,6 +50,31 @@ namespace SkeletonSite.Controllers
             return View();
         }
 
+        public ViewResult StoryBoard()
+        {
+            ViewData["Title"] = "StoryBoard";
+            return View(Models.Stories.StoryBank);
+        }
+
+        [HttpGet]
+        public IActionResult Comment(string storyTitle)
+        {
+            ViewData["Title"] = "Comment";
+            ViewBag.Story = storyTitle;
+            return View("Comment", storyTitle);
+        }
+
+        [HttpPost]
+        public IActionResult Comment(string subject, string storyTitle)
+        {
+            ViewBag.Story = storyTitle;
+            ViewData["Title"] = "Comment";
+            Comment com = new Comment();
+            com.Text = subject;
+            Stories.Retrieve(storyTitle).Subjects.Add(com);
+            return RedirectToAction("StoryBoard");
+        }
+
         public ViewResult Books()
         {
             return View(BookCollection.Library);
@@ -60,29 +85,19 @@ namespace SkeletonSite.Controllers
             return View(LinkCollection.Bank);
         }
 
-        public ViewResult StoryBoard()
+        public ContentResult ContentMethod()
         {
-            ViewData["Title"] = "StoryBoard";
-            return View(Models.Stories.StoryBank);
+            return Content("apples");
         }
 
-        [HttpGet]
-        public ViewResult Comment(string storyTitle)
+        public DateTime DateMethod()
         {
-            ViewData["Title"] = "Comment";
-            ViewBag.Story = storyTitle;
-            return View("Comment", storyTitle);
+            return DateTime.Now;
         }
 
-        [HttpPost]
-        public ViewResult Comment(string subject, string storyTitle)
+        public String StringMethod()
         {
-            ViewBag.Story = storyTitle;
-            ViewData["Title"] = "Comment";
-            Comment com = new Comment();
-            com.Text = subject;
-            Stories.Retrieve(storyTitle).Subjects.Add(com);
-            return View("Comment", storyTitle);
+            return "Hello.";
         }
     }
 }
