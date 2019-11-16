@@ -90,14 +90,14 @@ namespace SkeletonSite.Controllers
             return Content("apples");
         }
 
-        public DateTime DateMethod()
+        public NotFoundResult NotFoundMethod()
         {
-            return DateTime.Now;
+            return NotFound();
         }
 
-        public String StringMethod()
+        public UnauthorizedResult UnauthMethod()
         {
-            return "Hello.";
+            return Unauthorized();
         }
     }
 }
