@@ -5,11 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SkeletonSite.Models;
+using SkeletonSite.Repositories;
 
 namespace SkeletonSite.Controllers
 {
     public class HomeController : Controller
     {
+        IRepository repo;
+
+        public HomeController(IRepository r)
+        {
+            repo = r;
+        }
+
         public ViewResult Index()
         {   
             ViewData["Title"] = "Home";
@@ -35,7 +43,7 @@ namespace SkeletonSite.Controllers
             ViewData["Title"] = "StoryPost";
             if (ModelState.IsValid)
             {
-                Models.Stories.AddStory(post);
+                repo.AddStory(post);
                 return View();
             }
             else
@@ -53,7 +61,7 @@ namespace SkeletonSite.Controllers
         public ViewResult StoryBoard()
         {
             ViewData["Title"] = "StoryBoard";
-            return View(Models.Stories.StoryBank);
+            return View(repo.StoryBank);
         }
 
         [HttpGet]
@@ -71,7 +79,7 @@ namespace SkeletonSite.Controllers
             ViewData["Title"] = "Comment";
             Comment com = new Comment();
             com.Text = subject;
-            Stories.Retrieve(storyTitle).Subjects.Add(com);
+            repo.Retrieve(storyTitle).Subjects.Add(com);
             return RedirectToAction("StoryBoard");
         }
 
@@ -85,7 +93,8 @@ namespace SkeletonSite.Controllers
             return View(LinkCollection.Bank);
         }
 
-        public ContentResult ContentMethod()
+        /* Lab 6
+         * public ContentResult ContentMethod()
         {
             return Content("apples");
         }
@@ -98,6 +107,6 @@ namespace SkeletonSite.Controllers
         public UnauthorizedResult UnauthMethod()
         {
             return Unauthorized();
-        }
+        }*/
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SkeletonSite.Repositories;
+using SkeletonSite.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace SkeletonSite
 {
@@ -33,6 +36,9 @@ namespace SkeletonSite
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Inject our repositories into our controllers
+            services.AddTransient<IRepository, StoriesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

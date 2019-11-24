@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SkeletonSite.Models;
 
-namespace SkeletonSite.Models
+namespace SkeletonSite.Repositories
 {
-    public class Stories
+    public class StoriesRepository : IRepository
     {
         public static List<Story> stories = new List<Story>();
 
-        public static IEnumerable<Story> StoryBank
+        public List<Story> StoryBank
         {
             get
             {
@@ -23,12 +24,12 @@ namespace SkeletonSite.Models
             }
         }
 
-        public static void AddStory(Story story)
+        public void AddStory(Story story)
         {
             stories.Add(story); 
         }
 
-        public static Story Retrieve(string title)
+        public Story Retrieve(string title)
         {
             return stories.Find(x => x.Title == title);
         }
