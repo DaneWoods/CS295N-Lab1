@@ -34,7 +34,7 @@ namespace SkeletonSite.Repositories
             return stories.Find(x => x.Title == title);
         }
 
-        public void AddInitialStories()
+       public void AddInitialStories()
         {
             Story s1 = new Story { Title = "King of Grapes", Text = "He owned a lot of grapes" };
             Story s2 = new Story { Title = "King of Bananas", Text = "He owned a lot of bananas"};

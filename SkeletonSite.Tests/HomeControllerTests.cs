@@ -16,11 +16,11 @@ namespace SkeletonSite.Tests
             // Arrange
             var repo = new FakeStoriesRepository();
             var homeController = new HomeController(repo);
-            Story sortedStory = new Story();
+            repo.AddInitialStories();
             // Act
-            sortedStory = repo.StoryBank[0];
+            homeController.StoryBoard();
             // Assert
-            Assert.Equal("King of Apples", sortedStory.Title);
+            Assert.Equal("King of Grapes", repo.StoryBank[repo.StoryBank.Count - 1].Title);
         }
 
         [Fact]
@@ -29,12 +29,13 @@ namespace SkeletonSite.Tests
             // Arrange
             var repo = new FakeStoriesRepository();
             var homeController = new HomeController(repo);
-            Story newStory = new Story { Title = "King of Pineapples", Text = "He had a lot of pineapples"};
+            Story sortedStory = new Story();
+            sortedStory.Title = "King of Apples";
+            sortedStory.Text = "Lots of apples";
             // Act
-            repo.AddStory(newStory);
+            homeController.StoryPost(sortedStory);
             // Assert
-            Assert.Equal(4, repo.StoryBank.Count);
-            Assert.Equal("King of Pineapples", repo.StoryBank[repo.StoryBank.Count - 1].Title);
+            Assert.Equal(sortedStory, repo.StoryBank[repo.StoryBank.Count - 1]);
         }
 
         [Fact]
@@ -44,10 +45,17 @@ namespace SkeletonSite.Tests
             var repo = new FakeStoriesRepository();
             var homeController = new HomeController(repo);
             Story sortedStory = new Story();
+            repo.AddInitialStories();
             // Act
-            sortedStory = repo.Retrieve(repo.StoryBank[1].Title);
+            sortedStory = repo.Retrieve(repo.StoryBank[0].Title);
             // Assert
-            Assert.Equal(repo.StoryBank[1].Title, sortedStory.Title);
+            Assert.Equal("King of Apples", sortedStory.Title);
+        }
+
+        [Fact]
+        public void AddCommentTest()
+        {
+
         }
     }
 }
