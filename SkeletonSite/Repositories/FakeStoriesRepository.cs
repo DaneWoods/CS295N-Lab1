@@ -39,8 +39,6 @@ namespace SkeletonSite.Repositories
             Story s1 = new Story { Title = "King of Grapes", Text = "He owned a lot of grapes" };
             Story s2 = new Story { Title = "King of Bananas", Text = "He owned a lot of bananas"};
             Story s3 = new Story { Title = "King of Apples", Text = "He owned a lot of apples" };
-            Comment com1 = new Comment { Text = "Wow, great story." };
-            s1.com.Add(com1);
             stories.Add(s1);
             stories.Add(s2);
             stories.Add(s3);

@@ -55,7 +55,20 @@ namespace SkeletonSite.Tests
         [Fact]
         public void AddCommentTest()
         {
-
+            // Arrange
+            var repo = new FakeStoriesRepository();
+            var homeController = new HomeController(repo);
+            string com = "Great story.";
+            string title = "King of Grapes";
+            repo.AddInitialStories();
+            Story tstory = repo.Retrieve(title);
+            Comment tcom = new Comment();
+            tcom.Text = com;
+            // Act
+            homeController.Comment(com, title);
+            // Assert
+            Assert.Equal(1, repo.Retrieve(title).Subjects.Count);
+            Assert.Equal(tcom.Text, tstory.Subjects[0].Text);
         }
     }
 }
