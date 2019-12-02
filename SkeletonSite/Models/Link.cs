@@ -7,6 +7,7 @@ namespace SkeletonSite.Models
 {
     public class Link
     {
+        public int LinkID { get; set; }
         public string Url { get; set; }
     }
 }

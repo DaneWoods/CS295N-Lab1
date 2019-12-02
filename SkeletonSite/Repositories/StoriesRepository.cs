@@ -8,30 +8,23 @@ namespace SkeletonSite.Repositories
 {
     public class StoriesRepository : IRepository
     {
-        public static List<Story> stories = new List<Story>();
+        public AppDbContext context;
+        public List<Story> StoryBank { get { return context.Stories.ToList(); } }
 
-        public List<Story> StoryBank
+        public StoriesRepository(AppDbContext dbContext)
         {
-            get
-            {
-                for(int i = 0; i < stories.Count; i++)
-                {
-                    if(stories[i].Title != null)
-                        stories.Sort((title1, title2) => title1.Title.CompareTo(title2.Title));
-                }
-                
-                return stories;
-            }
+            context = dbContext;
         }
 
         public void AddStory(Story story)
         {
-            stories.Add(story); 
+            context.Stories.Add(story);
+            context.SaveChanges();
         }
 
         public Story Retrieve(string title)
         {
-            return stories.Find(x => x.Title == title);
+            return context.Stories.First(x => x.Title == title);
         }
     }
 }

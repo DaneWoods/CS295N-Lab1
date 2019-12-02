@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SkeletonSite.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace SkeletonSite
@@ -39,6 +41,10 @@ namespace SkeletonSite
 
             // Inject our repositories into our controllers
             services.AddTransient<IRepository, StoriesRepository>();
+
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration["Data:SkeletonSite:ConnectionString"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

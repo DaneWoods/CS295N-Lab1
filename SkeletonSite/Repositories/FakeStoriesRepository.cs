@@ -10,7 +10,7 @@ namespace SkeletonSite.Repositories
     {
         public static List<Story> stories = new List<Story>();
 
-        public List<Story> StoryBank
+        public List<Story> Stories
         {
             get
             {

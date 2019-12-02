@@ -9,6 +9,7 @@ namespace SkeletonSite.Models
 {
     public class Comment
     {
+        public int CommentID { get; set; }
         [Required(ErrorMessage = "Please input your text for your comment")]
         public string Text { get; set; }
     }
