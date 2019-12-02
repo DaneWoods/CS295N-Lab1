@@ -20,7 +20,7 @@ namespace SkeletonSite.Tests
             // Act
             homeController.StoryBoard();
             // Assert
-            Assert.Equal("King of Grapes", repo.StoryBank[repo.StoryBank.Count - 1].Title);
+            Assert.Equal("King of Grapes", repo.Stories[repo.Stories.Count - 1].Title);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace SkeletonSite.Tests
             // Act
             homeController.StoryPost(sortedStory);
             // Assert
-            Assert.Equal(sortedStory, repo.StoryBank[repo.StoryBank.Count - 1]);
+            Assert.Equal(sortedStory, repo.Stories[repo.Stories.Count - 1]);
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace SkeletonSite.Tests
             Story sortedStory = new Story();
             repo.AddInitialStories();
             // Act
-            sortedStory = repo.Retrieve(repo.StoryBank[0].Title);
+            sortedStory = repo.Retrieve(repo.Stories[0].Title);
             // Assert
             Assert.Equal("King of Apples", sortedStory.Title);
         }

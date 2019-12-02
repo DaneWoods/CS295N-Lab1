@@ -9990,23 +9990,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Users\\Student\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Lab5 Dane Woods\\SkeletonSite.Tests\\SkeletonSite.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\Desktop\\Dane Woods\\MySite\\SkeletonSite.Tests\\SkeletonSite.Tests.csproj",
       "projectName": "SkeletonSite.Tests",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\Lab5 Dane Woods\\SkeletonSite.Tests\\SkeletonSite.Tests.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\Lab5 Dane Woods\\SkeletonSite.Tests\\obj\\",
+      "projectPath": "C:\\Users\\Student\\Desktop\\Dane Woods\\MySite\\SkeletonSite.Tests\\SkeletonSite.Tests.csproj",
+      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Student\\Desktop\\Dane Woods\\MySite\\SkeletonSite.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10019,8 +10019,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Administrator\\Desktop\\Lab5 Dane Woods\\SkeletonSite\\SkeletonSite.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Desktop\\Lab5 Dane Woods\\SkeletonSite\\SkeletonSite.csproj"
+            "C:\\Users\\Student\\Desktop\\Dane Woods\\MySite\\SkeletonSite\\SkeletonSite.csproj": {
+              "projectPath": "C:\\Users\\Student\\Desktop\\Dane Woods\\MySite\\SkeletonSite\\SkeletonSite.csproj"
             }
           }
         }

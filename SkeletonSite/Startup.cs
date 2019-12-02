@@ -45,10 +45,11 @@ namespace SkeletonSite
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
                     Configuration["Data:SkeletonSite:ConnectionString"]));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext context)
         {
             if (env.IsDevelopment())
             {
@@ -71,6 +72,11 @@ namespace SkeletonSite
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // Create or update the database and apply migrations
+            context.Database.Migrate();
+
+       
         }
     }
 }

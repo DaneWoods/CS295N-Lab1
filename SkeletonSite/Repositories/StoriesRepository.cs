@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SkeletonSite.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SkeletonSite.Repositories
 {
     public class StoriesRepository : IRepository
     {
         public AppDbContext context;
-        public List<Story> StoryBank { get { return context.Stories.ToList(); } }
+        public List<Story> Stories { get { return context.Stories.Include(x => x.Subjects).ToList(); } }
 
         public StoriesRepository(AppDbContext dbContext)
         {
@@ -20,6 +21,11 @@ namespace SkeletonSite.Repositories
         {
             context.Stories.Add(story);
             context.SaveChanges();
+        }
+
+        public void AddComment(Comment com, string title)
+        {
+            Retrieve(title).Subjects.Add(com);
         }
 
         public Story Retrieve(string title)

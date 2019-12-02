@@ -8,8 +8,9 @@ namespace SkeletonSite.Repositories
 {
     public interface IRepository
     {
-        List<Story> StoryBank { get; }
+        List<Story> Stories{ get; }
         void AddStory(Story story);
+        void AddComment(Comment com, string title);
         Story Retrieve(string title);
     }
 }

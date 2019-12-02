@@ -10,25 +10,17 @@ namespace SkeletonSite.Repositories
     {
         public static List<Story> stories = new List<Story>();
 
-        public List<Story> Stories
-        {
-            get
-            {
-                for (int i = 0; i < stories.Count; i++)
-                {
-                    if (stories[i].Title != null)
-                        stories.Sort((title1, title2) => title1.Title.CompareTo(title2.Title));
-                }
-
-                return stories;
-            }
-        }
+        public List<Story> Stories { get { return stories; } }
 
         public void AddStory(Story story)
         {
             stories.Add(story);
         }
 
+        public void AddComment(Comment com, string title)
+        {
+            Retrieve(title).Subjects.Add(com);
+        }
         public Story Retrieve(string title)
         {
             return stories.Find(x => x.Title == title);

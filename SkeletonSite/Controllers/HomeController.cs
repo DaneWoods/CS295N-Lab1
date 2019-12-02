@@ -61,7 +61,12 @@ namespace SkeletonSite.Controllers
         public ViewResult StoryBoard()
         {
             ViewData["Title"] = "StoryBoard";
-            return View(repo.StoryBank);
+            for (int i = 0; i < repo.Stories.Count; i++)
+            {
+                if (repo.Stories[i].Title != null)
+                    repo.Stories.Sort((title1, title2) => title1.Title.CompareTo(title2.Title));
+            }
+            return View(repo.Stories);
         }
 
         [HttpGet]
@@ -79,7 +84,7 @@ namespace SkeletonSite.Controllers
             ViewData["Title"] = "Comment";
             Comment com = new Comment();
             com.Text = subject;
-            repo.Retrieve(storyTitle).Subjects.Add(com);
+            repo.AddComment(com, storyTitle);
             return RedirectToAction("StoryBoard");
         }
 
