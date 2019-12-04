@@ -25,7 +25,8 @@ namespace SkeletonSite.Repositories
 
         public void AddComment(Comment com, string title)
         {
-            Retrieve(title).Subjects.Add(com);
+            context.Stories.First(x => x.Title == title).Subjects.Add(com);
+            context.SaveChanges();
         }
 
         public Story Retrieve(string title)

@@ -44,7 +44,7 @@ namespace SkeletonSite
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration["Data:SkeletonSite:ConnectionString"]));
+                    Configuration["ConnectionStrings:SqlConnections"]));
 
         }
 

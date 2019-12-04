@@ -14,9 +14,9 @@ namespace SkeletonSite.Repositories
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         { }
 
-        public DbSet<BookDetails> Books { get; set; }
+        //public DbSet<BookDetails> Books { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Link> Links { get; set; }
+        //public DbSet<Link> Links { get; set; }
         public DbSet<Story> Stories { get; set; }
     }
 }
