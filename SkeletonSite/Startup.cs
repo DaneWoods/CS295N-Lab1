@@ -66,6 +66,8 @@ namespace SkeletonSite
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            context.Database.Migrate();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
